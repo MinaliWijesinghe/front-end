@@ -1,0 +1,31 @@
+<table class="table table-striped" style="width: 50%">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Max Price</th>
+      <th scope="col">Min Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Harvesting Date</th>
+      <th scope="col">Expiry Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dem of demandAdService.demandAds">
+      <td>{{dem.name}}</td>
+      <td>{{dem.minPrice}}</td>
+      <td>{{dem.maxPrice}}</td>
+      <td>{{dem.quantity}}</td>
+      <td>{{dem.hDate}}</td>
+      <td>{{dem.eDate}}</td>
+      <td>
+        <a class="btn btn-outline-info" (click)="onEdit(dem)">
+          <i>edit</i>
+        </a>
+        <a class="btn btn-outline-info" (click)="onDelete(dem._id,demandAdForm)">
+          <i>delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
